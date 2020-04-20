@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:fpts.Views"
+             mc:Ignorable="d"
+             x:Class="fpts.Views.Login"         
+             BackgroundImageSource="background.png">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="40">
+
+           
+            <StackLayout HeightRequest="300"></StackLayout>
+
+            <Grid  RowSpacing="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="1" Orientation="Horizontal" >
+                    <Image Source="user.png"  VerticalOptions="StartAndExpand"/>
+                    <Entry  Placeholder="Email hoặc Sđt " PlaceholderColor="Black" FontSize="13" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Orientation="Horizontal" >
+                    <Image Source="pass.png"  VerticalOptions="StartAndExpand"/>
+                    <Entry  Placeholder="Mật khẩu" PlaceholderColor="Black" FontSize="13" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Orientation="Horizontal" >
+                    <Image Source="done.png" VerticalOptions="StartAndExpand"></Image>
+                    <Entry  Placeholder="Ghi nhớ tài khoản" PlaceholderColor="Black" FontSize="13"/>
+                    <Image Source="flag.jpg" HorizontalOptions="EndAndExpand"></Image>
+                </StackLayout>
+            </Grid>
+            <StackLayout HeightRequest="20"></StackLayout>
+            <Button Text="Đăng nhập" BackgroundColor="#50b849" TextColor="White" HeightRequest="40" CornerRadius="5" VerticalOptions="Center" Clicked="BtnLogin_click" />
+            <StackLayout HeightRequest="220"></StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+                <Label Text="Quên mật khẩu?  |" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White"></Label>
+                <Label Text="Trợ giúp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White"></Label>
+            </StackLayout>
+            <Label Text="Quý khách chưa có tài khoản? Đăng ký" VerticalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

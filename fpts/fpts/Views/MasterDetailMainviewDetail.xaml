@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="fpts.Views.MasterDetailMainviewDetail"
+            xmlns:views="clr-namespace:fpts.Views"
+             Title="EzMobile Trading" >
+    <views:HomeView  IconImageSource="tt.png" ></views:HomeView>
+    <views:HomeView IconImageSource="company.png" ></views:HomeView>
+    <views:HomeView IconImageSource="law.png" ></views:HomeView>
+    <views:HomeView IconImageSource="edit.png" ></views:HomeView>
+    <views:HomeView IconImageSource="money.png" ></views:HomeView>
+    
+    
+</TabbedPage>
