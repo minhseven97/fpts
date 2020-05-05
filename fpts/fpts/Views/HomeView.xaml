@@ -7,20 +7,20 @@
              mc:Ignorable="d"
              x:Class="fpts.Views.HomeView">
 
-    
+
     <ContentPage.ToolbarItems>
-            <ToolbarItem IconImageSource="sort.png" Priority="0" Order="Primary"></ToolbarItem>
-            <ToolbarItem IconImageSource="search.png" Priority="1" Order="Primary"></ToolbarItem>
-        </ContentPage.ToolbarItems>
-   
+        <ToolbarItem IconImageSource="sort.png" Priority="0" Order="Primary"></ToolbarItem>
+        <ToolbarItem IconImageSource="search.png" Priority="1" Order="Primary"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        
+
         <StackLayout >
-            <CollectionView ItemsSource="{Binding BangGias}" ItemsLayout="HorizontalList" BackgroundColor="White" HeightRequest="160" >
+            <CollectionView ItemsSource="{Binding BangGias}" ItemsLayout="HorizontalList" BackgroundColor="White" HeightRequest="180" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-   
-                        <StackLayout Padding="10" WidthRequest="70">
+
+                        <StackLayout Padding="10" WidthRequest="80">
                             <Label Grid.Row="1" Text="{Binding ma}" Style="{StaticResource labelStyleMa}" />
                             <Label Grid.Row="2" Text="{Binding gia}" Style="{StaticResource labelStyleGia}" >
                                 <Label.Triggers >
@@ -113,168 +113,161 @@
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-                
+
             </CollectionView>
 
-            
-            <Frame CornerRadius="2" HasShadow="False" IsClippedToBounds="True">
-                <StackLayout >
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="BẢNG GIÁ" TextColor="Black" FontSize="20"></Label>
+
+            <Frame Padding="0">
+                <StackLayout HeightRequest="110" >
+                    <StackLayout Orientation="Horizontal" Margin="17,7,17,3">
+                        <Label Text="BẢNG GIÁ" TextColor="#030303" FontSize="17"></Label>
                         <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                            <Image Source="menu.png" ></Image>
-                            <Image Source="plus.png" ></Image>
-                            <Image Source="next.png" ></Image>
+                            <Image Source="menu.png" HorizontalOptions="StartAndExpand"></Image>
+                            <Image Source="plus.png" HorizontalOptions="CenterAndExpand"></Image>
+                            <Image Source="next.png" HorizontalOptions="EndAndExpand"></Image>
                         </StackLayout>
                     </StackLayout>
+                    <Grid   BackgroundColor="White" Margin="7" Padding="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label   Text="Mã" VerticalOptions="Center" Grid.Column="1" FontSize="17" TextColor="#323232"></Label>
+                        <Label    Text="Giá" VerticalOptions="Center" Grid.Column="2" FontSize="17" TextColor="#323232" HorizontalOptions="EndAndExpand"></Label>
+                        <Label   Text="Thay đổi" VerticalOptions="Center" Grid.Column="3" FontSize="17" TextColor="#323232" HorizontalOptions="EndAndExpand"></Label>
+                        <Label   Text="Khối lượng" VerticalOptions="Center" Grid.Column="4" FontSize="17" TextColor="#323232" HorizontalOptions="EndAndExpand"></Label>
+
+                        <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                        <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                        <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                        <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                    </Grid>
                 </StackLayout>
+
             </Frame>
-            
-                <Grid  ColumnSpacing="5" BackgroundColor="White">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
 
-                    <Label   Text="Mã" VerticalOptions="Center" Grid.Column="1" FontSize="Body"></Label>
-                    <Label    Text="Giá" VerticalOptions="Center" Grid.Column="2" FontSize="Body"></Label>
-                    <Label   Text="Thay đổi" VerticalOptions="Center" Grid.Column="3" FontSize="Body"></Label>
-                    <Label   Text="Khối lượng" VerticalOptions="Center" Grid.Column="4" FontSize="Body"></Label>
 
-                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                </Grid>
-            
-            <ListView ItemsSource="{Binding BangGias}">
+
+            <ListView ItemsSource="{Binding BangGias}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame Padding="0">
-                                <Grid Padding="0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems Mode="Execute">
+                                        <SwipeItem Text="XÓA" BackgroundColor="Red"/>
+                                    </SwipeItems>
 
-                                    <Label   Text="{Binding ma}" VerticalOptions="Center" Grid.Column="1">
-                                        <Label.Triggers >
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                </SwipeView.RightItems>
+
+                                <Frame Padding="0">
+
+                                        <Grid Padding="0" Margin="7">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label   Text="{Binding ma}" VerticalOptions="Center" Grid.Column="1" FontSize="17" >
+
+                                                <Label.Triggers >
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#b2252e" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#b2252e" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="0" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#fc7210" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#fc7210" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="-1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#45b642" />
-                                            </MultiTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-                                    <Label    Text="{Binding gia}" VerticalOptions="Center" Grid.Column="2">
-                                        <Label.Triggers >
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#45b642" />
+                                                    </MultiTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                            <Label    Text="{Binding gia}" VerticalOptions="Center" Grid.Column="2" HorizontalOptions="EndAndExpand" FontSize="17">
+                                                <Label.Triggers >
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#b2252e" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#b2252e" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="0" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#fc7210" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#fc7210" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="-1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#45b642" />
-                                            </MultiTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-                                    <Label  x:Name="labelthaydoi11" Text="{Binding thaydoi1}" VerticalOptions="Center" Grid.Column="3">
-                                        <Label.Triggers >
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#45b642" />
+                                                    </MultiTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                            <Label  x:Name="labelthaydoi11" Text="{Binding thaydoi1}" VerticalOptions="Center" Grid.Column="3" HorizontalOptions="EndAndExpand" FontSize="17">
+                                                <Label.Triggers >
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#b2252e" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#b2252e" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="0" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#fc7210" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#fc7210" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger TargetType="Label">
+                                                        <MultiTrigger.Conditions>
+                                                            <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
                                                     Value="-1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#45b642" />
-                                            </MultiTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-                                    <Label   Text="{Binding kl}" VerticalOptions="Center" Grid.Column="4">
-                                        <Label.Triggers >
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
-                                                    Value="1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#b2252e" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
-                                                    Value="0" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#fc7210" />
-                                            </MultiTrigger>
-                                            <MultiTrigger TargetType="Label">
-                                                <MultiTrigger.Conditions>
-                                                    <BindingCondition Binding="{Binding Source={x:Reference labelthaydoi11},Path=Text.Length,Converter={StaticResource dataHasBeenEntered}}"
-                                                    Value="-1" />
-                                                </MultiTrigger.Conditions>
-                                                <Setter Property="TextColor" Value="#45b642" />
-                                            </MultiTrigger>
-                                        </Label.Triggers>
-                                    </Label>
-                                    
-                                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                                    <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
-                                    
-                                </Grid>
-                            </Frame>
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="TextColor" Value="#45b642" />
+                                                    </MultiTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+                                            <Label   Text="{Binding kl}" VerticalOptions="Center" Grid.Column="4" TextColor="#2f2f2f" HorizontalOptions="EndAndExpand" FontSize="17">
+
+                                            </Label>
+
+                                            <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="FillAndExpand"></BoxView>
+                                            <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                                            <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+                                            <BoxView BackgroundColor="White" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"></BoxView>
+
+                                        </Grid>
+                                    </Frame>
+
+                            </SwipeView>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
-   
+
 </ContentPage>

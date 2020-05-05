@@ -21,10 +21,10 @@ namespace fpts.ViewModels
                 new BangGia(){ma="FPT",gia=112,thaydoi1=-0.42,thaydoi2="0.21%",kl=0,tien="10.2 tỷ"},
                 new BangGia(){ma="GAS",gia=54,thaydoi1=1.1,thaydoi2="0.54%",kl=0,tien="23.4 tỷ"},
                 new BangGia(){ma="DPM",gia=12,thaydoi1=-0,thaydoi2="0.1%",kl=0,tien="22.4 tỷ"},
-                new BangGia(){ma="HVN",gia=36,thaydoi1=-0.5,thaydoi2="0.6%",kl=0,tien="10.1 tỷ"},
-                new BangGia(){ma="HNX",gia=23,thaydoi1=-0.7,thaydoi2="0.21%",kl=0,tien="10.2 tỷ"},
-                new BangGia(){ma="UPCOM",gia=23,thaydoi1=-0,thaydoi2="0.5%",kl=0,tien="10.1 tỷ"},
-                new BangGia(){ma="VTC",gia=657,thaydoi1=-0.24,thaydoi2="0.12%",kl=0,tien="10.1 tỷ"},
+                new BangGia(){ma="HVN",gia=36,thaydoi1=-0.51,thaydoi2="0.6%",kl=0,tien="10.1 tỷ"},
+                new BangGia(){ma="HNX",gia=23,thaydoi1=-0.07,thaydoi2="0.21%",kl=0,tien="10.2 tỷ"},
+                new BangGia(){ma="UPCOM",gia=23,thaydoi1=0,thaydoi2="0.5%",kl=0,tien="10.1 tỷ"},
+                new BangGia(){ma="VTC",gia=657,thaydoi1=-0.24,thaydoi2="0.12%",kl=0,tien="10.1 tỷ"}
             };
         }
 
