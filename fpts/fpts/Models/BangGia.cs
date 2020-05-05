@@ -9,8 +9,8 @@ namespace fpts.Models
         public string ma { get; set; }
         public double gia { get; set; }
         public double thaydoi1 { get; set; }
-        public string thaydoi2 { get; set; }
+        public double thaydoi2 { get; set; }
         public double kl { get; set; }
-        public string tien { get; set; }
+        public double tien { get; set; }
     }
 }
