@@ -8,7 +8,7 @@
              x:Class="fpts.App">
     <Application.Resources>
         <ResourceDictionary>
-            <local:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+            <local:HomeViewViewModel x:Key="dataHasBeenEntered" />
             <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="17" />

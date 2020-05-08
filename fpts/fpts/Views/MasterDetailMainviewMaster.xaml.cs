@@ -1,4 +1,6 @@
-﻿using System;
+﻿using fpts.Models;
+using fpts.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -21,36 +23,14 @@ namespace fpts.Views
         {
             InitializeComponent();
 
-            BindingContext = new MasterDetailMainviewMasterViewModel();
-            ListView = MenuItemsListView;
+            
         }
 
-        class MasterDetailMainviewMasterViewModel : INotifyPropertyChanged
+        private async void lbTap(object sender, EventArgs e)
         {
-            public ObservableCollection<MasterDetailMainviewMasterMenuItem> MenuItems { get; set; }
-
-            public MasterDetailMainviewMasterViewModel()
-            {
-                MenuItems = new ObservableCollection<MasterDetailMainviewMasterMenuItem>(new[]
-                {
-                    new MasterDetailMainviewMasterMenuItem { Id = 0, Title = "Page 1" },
-                    new MasterDetailMainviewMasterMenuItem { Id = 1, Title = "Page 2" },
-                    new MasterDetailMainviewMasterMenuItem { Id = 2, Title = "Page 3" },
-                    new MasterDetailMainviewMasterMenuItem { Id = 3, Title = "Page 4" },
-                    new MasterDetailMainviewMasterMenuItem { Id = 4, Title = "Page 5" },
-                });
-            }
-
-            #region INotifyPropertyChanged Implementation
-            public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                if (PropertyChanged == null)
-                    return;
-
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-            #endregion
+            var pagee = new TaiSanView();
+            await Navigation.PushModalAsync(pagee);
+           // await Navigation.PushAsync(new TaiSanView());
         }
     }
 }

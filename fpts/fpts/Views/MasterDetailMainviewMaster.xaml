@@ -3,56 +3,176 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:fpts.Views"
              mc:Ignorable="d"
              x:Class="fpts.Views.MasterDetailMainviewMaster"
              Title="Master">
-  <StackLayout>
-    <ListView x:Name="MenuItemsListView"
-              SeparatorVisibility="None"
-              HasUnevenRows="true"
-              ItemsSource="{Binding MenuItems}">
-      <d:ListView.ItemsSource>
-          <x:Array Type="{x:Type x:String}">
-              <x:String>Page</x:String>
-              <x:String>Page 2</x:String>
-              <x:String>Page 3</x:String>
-              <x:String>Page 4</x:String>
-              <x:String>Page 5</x:String>
-          </x:Array>
-      </d:ListView.ItemsSource>
-      <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-          </Grid.RowDefinitions>
-          <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              Text="AppName"
-              Style="{DynamicResource SubtitleStyle}"/>
-        </Grid>
-      </ListView.Header>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    d:Text="{Binding .}"
-                    FontSize="24"/>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HeightRequest="70" Orientation="Horizontal" BackgroundColor="#1d61ac">
+                <StackLayout Padding="10">
+                    <Image Source="user1" HeightRequest="40" VerticalOptions="CenterAndExpand"></Image>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                    <Label Text="058C245197" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
+                    <Label Text="Đỗ Công Minh" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="10,10,10,10">
+                    <ImageButton Source="cogwheels" HeightRequest="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="50" BorderColor="#1d61ac">
+                        <!--<Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lmgTap"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>-->
+                        
+                    </ImageButton>
+                    <Image Source="power" HeightRequest="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                </StackLayout>
             </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    
+                    <StackLayout Padding="10" HeightRequest="20">
+                        <Label Text="Thị trường" FontSize="20"></Label>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Padding="10">
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="tongquan" HeightRequest="30" ></Image>
+                            <Label Text="Tổng quan" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="banggia" HeightRequest="30" ></Image>
+                            <Label Text="Bảng giá" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="tintuc" HeightRequest="30" ></Image>
+                            <Label Text="Tin tức" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="chiso" HeightRequest="30" ></Image>
+                            <Label Text="Chỉ số thế giới" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="nhandinh" HeightRequest="30" ></Image>
+                            <Label Text="FPT nhận định" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="lich" HeightRequest="30" ></Image>
+                            <Label Text="Lịch sự kiện" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="bieudo" HeightRequest="30" ></Image>
+                            <Label Text="Biểu đồ" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="sort" HeightRequest="30" ></Image>
+                            <Label Text="Giao dịch phát sinh" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Padding="10" HeightRequest="20">
+                        <Label Text="Giao dịch" FontSize="20"></Label>
+                        <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Padding="10">
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="law" HeightRequest="30" ></Image>
+                            <Label Text="Đặt lệnh" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        
+                        <StackLayout>
+                            <Expander>
+                                <Expander.Header>
+                                    <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                                        <Image Source="tintuc" HeightRequest="30" HorizontalOptions="Start"></Image>
+                                        <Label Text="Báo cáo giao dịch" FontSize="18" Padding="5"></Label>
+                                        <Image Source="down.png" HorizontalOptions="EndAndExpand" HeightRequest="15">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image" Binding="{Binding Source={RelativeSource AncestorType={x:Type Expander}}, Path=IsExpanded}"
+                                                            Value="True">
+                                                    <Setter Property="Source" Value="up.png" />
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                    </StackLayout>
+                                    
+                                </Expander.Header>
+                                <StackLayout Padding="45,0,0,0">
+                                    <Label Text="Lệnh trong ngày" FontSize="18" Padding="0,5,0,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="lbTap"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="Lịch sử đặt lệnh" FontSize="18" Padding="0,5,0,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="lbTap"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="Lịch sử ứng trước" FontSize="18" Padding="0,5,0,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="lbTap"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Expander>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="nhandinh" HeightRequest="30" ></Image>
+                            <Label Text="Báo cáo tài sản" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="chiso" HeightRequest="30" ></Image>
+                            <Label Text="Bán lô lẻ" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="nhandinh" HeightRequest="30" ></Image>
+                            <Label Text="Thực hiện quyền" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Padding="10" HeightRequest="20">
+                        <Label Text="Trợ giúp" FontSize="20"></Label>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Padding="10">
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="sort" HeightRequest="30" ></Image>
+                            <Label Text="Đổi mật khẩu" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="nhandinh" HeightRequest="30" ></Image>
+                            <Label Text="Liên hệ" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="tintuc" HeightRequest="30" ></Image>
+                            <Label Text="Góp ý" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="chiso" HeightRequest="30" ></Image>
+                            <Label Text="Hướng dẫn sử dụng" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"  HeightRequest="40">
+                            <Image Source="cogwheels" HeightRequest="30" ></Image>
+                            <Label Text="Cài đặt" FontSize="18" Padding="5"></Label>
+                            <Image Source="sao.png" HorizontalOptions="EndAndExpand" HeightRequest="15"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

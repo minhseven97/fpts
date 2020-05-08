@@ -12,7 +12,7 @@ namespace fpts
         public App()
         {
             InitializeComponent();
-            
+   
             MainPage = new MasterDetailMainview();
         }
 

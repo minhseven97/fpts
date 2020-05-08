@@ -16,7 +16,7 @@ namespace fpts.Views
         public MasterDetailMainview()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         

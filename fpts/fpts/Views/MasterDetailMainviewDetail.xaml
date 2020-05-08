@@ -8,10 +8,10 @@
             xmlns:views="clr-namespace:fpts.Views"
              Title="EzMobile Trading" >
     <views:HomeView  IconImageSource="tt.png" ></views:HomeView>
-    <views:HomeView IconImageSource="company.png" ></views:HomeView>
-    <views:HomeView IconImageSource="law.png" ></views:HomeView>
-    <views:HomeView IconImageSource="edit.png" ></views:HomeView>
-    <views:HomeView IconImageSource="money.png" ></views:HomeView>
+    <views:TaiSanView IconImageSource="company.png" ></views:TaiSanView>
+    <views:TaiSanView IconImageSource="law.png" ></views:TaiSanView>
+    <views:TaiSanView IconImageSource="edit.png" ></views:TaiSanView>
+    <views:TaiSanView IconImageSource="money.png" ></views:TaiSanView>
     
     
 </TabbedPage>
