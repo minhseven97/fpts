@@ -22,8 +22,8 @@ namespace fpts.Views
         public MasterDetailMainviewMaster()
         {
             InitializeComponent();
+            this.BindingContext = new MasterDetailMainviewMasterViewModel();
 
-            
         }
 
         private async void lbTap(object sender, EventArgs e)
@@ -32,5 +32,9 @@ namespace fpts.Views
             await Navigation.PushModalAsync(pagee);
            // await Navigation.PushAsync(new TaiSanView());
         }
+
+        
+       
+
     }
 }

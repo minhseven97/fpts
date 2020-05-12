@@ -16,7 +16,7 @@ namespace fpts.Views
         public HomeView()
         {
             InitializeComponent();
-            this.BindingContext = new BangGiaListViewModel();
+            this.BindingContext = new HomeViewViewModel();
             
         }
     }
