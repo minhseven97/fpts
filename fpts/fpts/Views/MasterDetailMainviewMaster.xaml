@@ -7,59 +7,78 @@
              mc:Ignorable="d"
              x:Class="fpts.Views.MasterDetailMainviewMaster"
              Title="Master">
+    <StackLayout>
 
-    <!--<ContentPage.Content>
-        
-        <StackLayout>
-            <StackLayout>
-                <StackLayout HeightRequest="70" Orientation="Horizontal" BackgroundColor="#1d61ac">
-                    <StackLayout Padding="10">
-                        <Image Source="user1" HeightRequest="40" VerticalOptions="CenterAndExpand"></Image>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-                        <Label Text="058C245197" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
-                        <Label Text="Đỗ Công Minh" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
-                    </StackLayout>
+        <StackLayout HeightRequest="70" Orientation="Horizontal" BackgroundColor="#1d61ac">
+            <StackLayout Padding="10">
+                <Image Source="user1" HeightRequest="40" VerticalOptions="CenterAndExpand"></Image>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                <Label Text="058C245197" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
+                <Label Text="Đỗ Công Minh" TextColor="White" VerticalOptions="Center" FontSize="16"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="10,10,10,10">
+                <ImageButton Source="cogwheels" HeightRequest="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="50" BackgroundColor="#1d61ac">
+                </ImageButton>
+                <Image Source="power" HeightRequest="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+            </StackLayout>
 
-                </StackLayout>
-            </StackLayout>
-            <StackLayout>
-                
-            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>-->
+        <ListView x:Name="listView" Margin="0,0,0,0" ItemTemplate="{StaticResource selected}" ItemsSource="{Binding MMenus}"/>
+    </StackLayout>
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="top">
                 <ViewCell>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.4*" />
-
-                        </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Ten}" TextColor="Green" FontAttributes="Bold" />
-                    </Grid>
+                    <StackLayout Padding="10" HeightRequest="20">
+                        <Label Text="{Binding Ten}" FontSize="20"></Label>
+                    </StackLayout>
                 </ViewCell>
             </DataTemplate>
             <DataTemplate x:Key="bot">
-                <ViewCell>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.4*" />
+                <ViewCell Height="100">
+                    <StackLayout BackgroundColor="White" >
+                        <Expander>
+                            <Expander.Header>
+                                <StackLayout x:Name="stackclick" Orientation="Horizontal" BackgroundColor="White">
 
-                        </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Ten}" TextColor="Green" FontAttributes="Bold" />
-                    </Grid>
+                                    <Image Source="{Binding Hinh}" HeightRequest="30" HorizontalOptions="Start"></Image>
+                                    <Label Text="{Binding Ten}" FontSize="18" Padding="5"></Label>
+                                    <Image Source="down.png" HorizontalOptions="EndAndExpand" HeightRequest="15">
+                                        <Image.Triggers>
+                                            <DataTrigger TargetType="Image" Binding="{Binding Source={RelativeSource AncestorType={x:Type Expander}}, Path=IsExpanded}"
+                                                            Value="True">
+                                                <Setter Property="Source" Value="up.png" />
+                                            </DataTrigger>
+                                        </Image.Triggers>
+                                    </Image>
+                                </StackLayout>
+
+                            </Expander.Header>
+                            <StackLayout BackgroundColor="White">
+                                <Label Text="{Binding Ten1}"></Label>
+                                <Label Text="{Binding Ten2}"></Label>
+                                <Label Text="{Binding Ten3}"></Label>
+                            </StackLayout>
+                        </Expander>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="mid">
+                <ViewCell>
+        
+                    <StackLayout Orientation="Horizontal" HeightRequest="40" BackgroundColor="White">
+                        <Image Source="{Binding Hinh}" HeightRequest="30">
+                        </Image>
+                        <Label Text="{Binding Ten}" Padding="5" FontSize="18"/>
+                    </StackLayout>
                 </ViewCell>
             </DataTemplate>
             <local:Selected x:Key="selected"
                 Top="{StaticResource top}"
-                Mid="{StaticResource bot}"
+                 Bot="{StaticResource bot}"
+                Mid="{StaticResource mid}"
                  />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout Margin="20">
-        <Label Text="ListView with a DataTemplateSelector" FontAttributes="Bold" HorizontalOptions="Center" />
-        <ListView x:Name="listView" Margin="0,20,0,0" ItemTemplate="{StaticResource selected}" ItemsSource="{Binding MMenus}"/>
-    </StackLayout>
 </ContentPage>

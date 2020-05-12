@@ -17,7 +17,7 @@ namespace fpts.ViewModels
             MMenus = new ObservableCollection<MMenu>()
             {
                 new MMenu(){Ten="Thị trường",key="head"},
-                new MMenu()  { Ten="Thị trường",Hinh="sao",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
+                
                 new MMenu()  { Ten="Tổng quan",Hinh="tongquan",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
                 new MMenu()  { Ten="Bảng giá",Hinh="banggia",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
                 new MMenu()  { Ten="Tin tức",Hinh="tintuc",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
@@ -28,13 +28,14 @@ namespace fpts.ViewModels
                 new MMenu()  { Ten="Giao dịch phát sinh",Hinh="sort",Ngoisao1="sao",Ngoisao2="saovang"  ,key="a"},
                 new MMenu()  { Ten="Giao dịch",key="head" },
                 new MMenu()  { Ten="Đặt lệnh",Hinh="law",Ngoisao1="sao",Ngoisao2="saovang",key="a"},
-                new MMenu()  { Ten="Lệnh trong ngày",key="morong"},
-                new MMenu()  { Ten="Lịch sử đặt lệnh",key="morong"},
-                new MMenu()  { Ten="Lịch sử ứng trước" ,key="morong"},
-                new MMenu()  { Ten="Báo cáo giao dịch",Hinh="tintuc",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
+                
+                new MMenu()  { Ten="Báo cáo giao dịch",Hinh="tintuc",Ngoisao1="sao",Ngoisao2="saovang" ,key="morong" ,Ten1="Lệnh trong ngày",Ten2="Lịch sử đặt lệnh",Ten3="Lịch sử ứng trước"},
+                //new MMenu()  { Ten="Lệnh trong ngày",key="morong"},
+                //new MMenu()  { Ten="Lịch sử đặt lệnh",key="morong"},
+                //new MMenu()  { Ten="Lịch sử ứng trước" ,key="morong"},
                 new MMenu()  { Ten="Báo cáo tài sản",Hinh="nhandinh",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
                 new MMenu()  { Ten="Bán lô lẻ",Hinh="chiso",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
-                new MMenu()  { Ten="Thực hiện quyền",Hinh="nhan dinh",Ngoisao1="sao",Ngoisao2="saovang",key="a"  },
+                new MMenu()  { Ten="Thực hiện quyền",Hinh="nhandinh",Ngoisao1="sao",Ngoisao2="saovang",key="a"  },
                 new MMenu()  { Ten="Trợ giúp",key="head"},
                 new MMenu()  { Ten="Đổi mật khẩu",Hinh="sort",Ngoisao1="sao",Ngoisao2="saovang" ,key="a" },
                 new MMenu()  { Ten="Liên hệ",Hinh="nhandinh",Ngoisao1="sao",Ngoisao2="saovang",key="a"  },
