@@ -33,9 +33,6 @@ namespace fpts.Views
            // await Navigation.PushAsync(new TaiSanView());
         }
 
-        private void btnTap(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

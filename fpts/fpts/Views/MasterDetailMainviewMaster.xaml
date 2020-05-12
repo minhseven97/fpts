@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:fpts.ViewModels"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              mc:Ignorable="d"
              x:Class="fpts.Views.MasterDetailMainviewMaster"
              Title="Master">
@@ -24,23 +25,25 @@
             </StackLayout>
 
         </StackLayout>
-        <ListView x:Name="listView" Margin="0,0,0,0" ItemTemplate="{StaticResource selected}" ItemsSource="{Binding MMenus}"/>
+        <syncfusion:SfListView  Margin="0,0,0,0" ItemTemplate="{StaticResource selected}" ItemsSource="{Binding MMenus}" AutoFitMode="DynamicHeight"/>
     </StackLayout>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="top">
                 <ViewCell>
                     <StackLayout Padding="10" HeightRequest="20">
-                        <Label Text="{Binding Ten}" FontSize="20"></Label>
+                        <Label Text="{Binding Ten}" FontSize="20" ></Label>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
+            
             <DataTemplate x:Key="bot">
-                <ViewCell Height="100">
-                    <StackLayout BackgroundColor="White" >
+                <ViewCell >
+                    <StackLayout BackgroundColor="White">
                         <Expander>
                             <Expander.Header>
-                                <StackLayout x:Name="stackclick" Orientation="Horizontal" BackgroundColor="White">
+                                <StackLayout x:Name="stackclick" Orientation="Horizontal" BackgroundColor="White" Padding="5,0,10,0">
 
                                     <Image Source="{Binding Hinh}" HeightRequest="30" HorizontalOptions="Start"></Image>
                                     <Label Text="{Binding Ten}" FontSize="18" Padding="5"></Label>
@@ -55,10 +58,10 @@
                                 </StackLayout>
 
                             </Expander.Header>
-                            <StackLayout BackgroundColor="White">
-                                <Label Text="{Binding Ten1}"></Label>
-                                <Label Text="{Binding Ten2}"></Label>
-                                <Label Text="{Binding Ten3}"></Label>
+                            <StackLayout BackgroundColor="White" HeightRequest="100" Padding="250,0,0,0">
+                                <Label Text="{Binding Ten1}" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label Text="{Binding Ten2}" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label Text="{Binding Ten3}" FontSize="18" HorizontalOptions="Start"></Label>
                             </StackLayout>
                         </Expander>
                     </StackLayout>
@@ -67,10 +70,12 @@
             <DataTemplate x:Key="mid">
                 <ViewCell>
         
-                    <StackLayout Orientation="Horizontal" HeightRequest="40" BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal" HeightRequest="40" BackgroundColor="White" Padding="5,0,10,0">
                         <Image Source="{Binding Hinh}" HeightRequest="30">
                         </Image>
                         <Label Text="{Binding Ten}" Padding="5" FontSize="18"/>
+                        <Image Source="{Binding Ngoisao1}" HeightRequest="15" HorizontalOptions="EndAndExpand" IsVisible="False"></Image>
+                        <Image Source="{Binding Ngoisao2}" HeightRequest="15" HorizontalOptions="EndAndExpand" IsVisible="False"></Image>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
