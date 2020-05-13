@@ -12,8 +12,8 @@ namespace fpts.Models
         public string Ten3 { get; set; }
         public string Hinh { get; set; }
         public string Ngoisao1 { get; set; }
-        public string Ngoisao2 { get; set; }
-
+        public bool Yeuthich { get; set; }
+      
         public string key { get; set; }
         
     }

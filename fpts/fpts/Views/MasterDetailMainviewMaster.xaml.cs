@@ -30,9 +30,26 @@ namespace fpts.Views
         {
             var pagee = new TaiSanView();
             await Navigation.PushModalAsync(pagee);
-           // await Navigation.PushAsync(new TaiSanView());
+           
         }
-
         
+        private void imgbtnClick(object sender, EventArgs e)
+        {
+            imgbtn.IsVisible = !imgbtn.IsVisible;
+        }
+        //void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+        //{
+        //    tapCount++;
+        //    var imageSender = (Image)sender;
+        //    if (tapCount % 2 == 0)
+        //    {
+        //        imageSender.Source = "sao.png";
+        //    }
+        //    else
+        //    {
+        //        imageSender.Source = "saovang.png";
+        //    }
+        //}
+
     }
 }
