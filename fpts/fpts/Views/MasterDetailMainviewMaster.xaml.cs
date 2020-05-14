@@ -18,7 +18,7 @@ namespace fpts.Views
     public partial class MasterDetailMainviewMaster : ContentPage
     {
         public ListView ListView;
-
+        
         public MasterDetailMainviewMaster()
         {
             InitializeComponent();
@@ -30,26 +30,22 @@ namespace fpts.Views
         {
             var pagee = new TaiSanView();
             await Navigation.PushModalAsync(pagee);
-           
+
         }
-        
+
         private void imgbtnClick(object sender, EventArgs e)
         {
             imgbtn.IsVisible = !imgbtn.IsVisible;
         }
-        //void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+
+        //private void imgbtnClick1(object sender, EventArgs e)
         //{
-        //    tapCount++;
-        //    var imageSender = (Image)sender;
-        //    if (tapCount % 2 == 0)
-        //    {
-        //        imageSender.Source = "sao.png";
-        //    }
-        //    else
-        //    {
-        //        imageSender.Source = "saovang.png";
-        //    }
+        //    imgbtn1.IsVisible = !imgbtn1.IsVisible;
+
         //}
+
 
     }
 }
+        
+    
